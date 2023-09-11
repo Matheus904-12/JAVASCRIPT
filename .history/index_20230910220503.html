@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perímetro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <center><h1>Perímetro</h1></center>
+  </header>
+  <main>
+    <div class="catalog">
+      <div class="box">
+        <h2 class="title">Quadrado</h2>
+        <img class="image" src="Quadrado-removebg-preview.png" alt="Imagem 3">
+        <p>Perímetro: 4 * lado</p>
+        <input type="text" id="squareSideLength">
+        <input type="button" value="Calcular" onclick="calculatePerimeter('square')">
+        <p id="squarePerimeter"></p>
+      </div>
+      <div class="box">
+        <h2 class="title">Triângulo</h2>
+        <img class="image" src="Triângulo-removebg-preview.png" alt="Imagem 3">
+        <p>Perímetro: a + b + c</p>
+        <input type="text" id="triangleSideLength">
+        <input type="button" value="Calcular" onclick="calculatePerimeter('triangle')">
+        <p id="trianglePerimeter"></p>
+      </div>
+      <div class="box">
+        <h2 class="title">Círculo</h2>
+        <img class="image" src="Círculo-removebg-preview.png" alt="Imagem 3">
+        <p>Perímetro: 2 * π * raio</p>
+        <input type="text" id="circleRadius">
+        <input type="button" value="Calcular" onclick="calculatePerimeter('circle')">
+        <p id="circlePerimeter"></p>
+      </div>
+      <div class="box">
+        <h2 class="title">Losango</h2>
+        <img class="image" src="Losango-removebg-preview.png" alt="Imagem 3">
+        <p>Perímetro: 4 * diagonal</p>
+        <input type="text" id="rhombusDiagonal">
+        <input type="button" value="Calcular" onclick="calculatePerimeter('rhombus')">
+        <p id="rhombusPerimeter"></p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>O perímetro de uma figura é a distância ao redor dela.</p>
+  </footer>
+  <script>
+    // Esta função é chamada quando o usuário clica em um botão "Calcular".
+    function calculatePerimeter(shape) {
+      // Obter o valor do campo de entrada correspondente.
+      var inputId = shape + "SideLength";
+      var inputValue = parseFloat(document.getElementById(inputId).value);
+
+      // Calcular o perímetro com base na forma selecionada.
+      var perimeter;
+      if (shape === 'square') {
+        perimeter = 4 * inputValue;
+      } else if (shape === 'triangle') {
+        // Defina a lógica de cálculo para o triângulo aqui.
+      } else if (shape === 'circle') {
+        // Defina a lógica de cálculo para o círculo aqui.
+      } else if (shape === 'rhombus') {
+        // Defina a lógica de cálculo para o losango aqui.
+      }
+
+      // Exibir o perímetro no campo de saída correspondente.
+      var outputId = shape + "Perimeter";
+      document.getElementById(outputId).innerHTML = "Perímetro: " + perimeter;
+    }
+  </script>
+</body>
+</html>

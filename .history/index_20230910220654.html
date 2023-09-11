@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perímetro e Área</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <center><h1>Perímetro e Área</h1></center>
+  </header>
+  <main>
+    <div class="catalog">
+      <div class="box">
+        <h2 class="title">Quadrado</h2>
+        <img class="image" src="Quadrado-removebg-preview.png" alt="Imagem 3">
+        <p>Perímetro: 4 * lado</p>
+        <input type="text" id="squareSideLength">
+        <input type="button" value="Calcular" onclick="calcQuad()">
+        <p id="valorQuad"></p>
+      </div>
+      <!-- Outras formas geométricas aqui -->
+    </div>
+  </main>
+  <footer>
+    <p>O perímetro de uma figura é a distância ao redor dela.</p>
+  </footer>
+  <script>
+    function calcQuad() {
+      var a = Number(document.getElementById("squareSideLength").value);
+      var result = "A área do quadrado é " + a * a + " m²";
+      document.getElementById("valorQuad").innerHTML = result;
+    }
+
+    // Outras funções de cálculo aqui
+
+    var boxes = document.querySelectorAll(".box");
+
+    for (var i = 0; i < boxes.length; i++) {
+      boxes[i].addEventListener("click", function () {
+        var box = document.createElement("div");
+        box.className = "question-box";
+
+        var question1 = document.createElement("input");
+        question1.type = "text";
+        question1.placeholder = "Pergunta 1";
+
+        var question2 = document.createElement("input");
+        question2.type = "text";
+        question2.placeholder = "Pergunta 2";
+
+        box.appendChild(question1);
+        box.appendChild(question2);
+
+        document.body.appendChild(box);
+      });
+    }
+  </script>
+</body>
+</html>
